@@ -8,6 +8,7 @@ body, h1, ul {
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -19,6 +20,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    overflow: hidden;
 }
 
 .navbar .ul {
@@ -38,6 +40,8 @@ body {
     text-decoration: none;
    
 }
+
+
 
 /* Product Grid */
 .product-grid {
@@ -72,6 +76,7 @@ body {
     position: relative;
     
     gap: 20px;
+
 }
 
 /* Pseudo-classes - Hover effect on product button */
@@ -163,6 +168,22 @@ body {
 .cart{
     color: white;
     display: flex;
+    position: relative;
+}
+
+.cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    flex-wrap: wrap;
 }
 .cart_quantity_count{
     margin-top: 16px;
@@ -227,26 +248,93 @@ body {
   
   @media (max-width: 768px) {
     .product-card {
-      flex: 1 1 calc(50% - 20px); /* Adjust width for 2 cards per row with 20px gap on small screens */
-      max-width: calc(50% - 20px); /* Adjust max-width for 2 cards per row with 20px gap on small screens */
+      flex: 1 1 calc(80% - 20px);
+      max-width: calc(80% - 20px);
     }
+    
     .navbar {
-        flex-direction: column; /* Change flex direction to stack items vertically */
-        align-items: center; /* Align items to the center of the container */
-      }
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        align-items: center;
+    }
     
-      .tag {
-        margin-bottom: 20px; /* Add margin bottom for spacing */
-        text-align: center; /* Align text to the center */
-      }
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        gap: 20px;
+    }
     
-      .ul {
-        display: flex; /* Set display to flex */
-        flex-direction: column; /* Change flex direction to stack items vertically */
-        gap: 10px; /* Add gap between items */
-      }
+    .tag {
+        margin-bottom: 15px;
+        text-align: center;
+        width: 100%;
+    }
     
-      .ul div {
-        text-align: center; /* Align text to the center */
-      }
+    .luxury {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    .luxury img {
+        height: 50px;
+        width: 50px;
+    }
+    
+    .cart-container {
+        display: flex !important;
+        visibility: visible !important;
+    }
+    
+    .cart {
+        display: flex !important;
+        visibility: visible !important;
+    }
+    
+    .cart svg {
+        height: 50px !important;
+        width: 50px !important;
+        display: block !important;
+    }
+    
+    .cart_quantity_count {
+        font-size: 18px;
+        margin-top: 8px;
+        margin-left: 18px;
+        display: block !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-card {
+      flex: 1 1 calc(90% - 20px);
+      max-width: calc(90% - 20px);
+    }
+    
+    .navbar {
+        padding: 8px;
+        gap: 10px;
+    }
+    
+    .luxury {
+        font-size: 14px;
+    }
+    
+    .luxury img {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .cart svg {
+        height: 40px !important;
+        width: 40px !important;
+    }
+    
+    .cart_quantity_count {
+        font-size: 16px;
+        margin-top: 8px;
+        margin-left: 15px;
+    }
   }
