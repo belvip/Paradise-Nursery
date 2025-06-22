@@ -222,3 +222,37 @@ The App component is wrapped with the Provider component, with the Redux store p
 
 
 
+# Deploying Your Application with GitHub Pages
+  - 1. To deploy your react application in GitHub you need to install `gh-pages`. This allows you to use it as a tool for deploying your project to GitHub Pages. Perform given command in the terminal
+
+```bash
+npm install gh-pages --save-dev
+```
+
+  - 2. Add given lines before `"build": "vite build"` in package.json file.
+  ```bash
+  "predeploy": "npm run build",
+   "deploy": "gh-pages -d dist",
+   ```
+  - 3. Then in the vite.config.js file add this line before plugins: `[react()]`
+
+  ```bash
+  base: "/YOUR_REPOSITORY_NAME",
+  ```
+
+  - 4. Now perform deploy command in the terminal to executes the "deploy" script defined in the package.json file, deploying the project to GitHub Pages using the gh-pages tool.
+  ```bash
+    npm run deploy
+  ```
+
+  - 5. Perform git add and git commit commands to update changes in your code. Then perform git push command to update your GitHub repository for proper code management.
+
+  - 6. Go to your GitHub repository. Then, navigate to your site's repository that you created.
+
+  - 7. Under your repository name, click Settings.
+
+  - 8.  Navigate to the left hand side navigation bar. In the Code and Automation section of the sidebar, click Pages.
+
+  - 9. You will see the page shown below. Click the drop down menu where you see None, then click gh-pages, and then click the Save button
+
+  - 10. Refresh your page again, and you will see the link, just as below. Instead of shoppingreact, you will see your github repository name.
